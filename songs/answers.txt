@@ -1,0 +1,8 @@
+1. If songs.db contains the top 100 songs of one listener from 2018, how would you characterize their audio aura?
+        SELECT AVG(energy), AVG(valence), AVG(danceability) FROM songs LIMIT 100;
+
+
+2. Hypothesize about why the way you’ve calculated this aura might not be very representative of the listener. What better ways of calculating this aura would you propose?
+        Considering only the top 100 entries may not be the most accurate way to predict the aura as we need to also consider 'lost preferences', 'seasonal trends' and
+        change of mood of the person as a whole (maybe the person have matured or puberty?) etc. We have to consider using other techinques and algorithms to also tend to those
+        factors which may help us to create a much more connected (person) result for 'aura'.

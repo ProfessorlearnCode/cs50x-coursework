@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+
+            function mcqCheck()
+            {
+                let buttons = document.querySelectorAll('.section1 button');
+                let message = document.createElement('p');
+                buttons.forEach(button => {
+                    button.addEventListener('click', function(){
+
+                        if (button.id === 'option1') {
+                            button.style.backgroundColor = '#7DDA58';
+                            message.textContent = 'Correct';
+
+                        } else {
+                            button.style.backgroundColor = '#ED7B8E';
+                            message.textContent = 'Incorrect';
+                        }
+                        document.querySelector('.container h3').appendChild(message);
+
+                        setTimeout(() => {
+                            button.style.backgroundColor = '';
+                            message.textContent = '';
+                        }, 800)
+                    });
+                });
+            }
+
+
+            
+            function shortCheck()
+            {
+                let checkButton = document.querySelector('.section2 button');
+                let message = document.createElement('p');
+                let input_box = document.querySelector('input');
+                const regex = /.*computer science*/;
+                checkButton.addEventListener('click', function(){
+                    let input = document.querySelector('input').value;
+                    if(regex.test(input)) {
+                        message.textContent = "Correct";
+                        input_box.style.backgroundColor = "#7DDA58";
+                    } else {
+                        message.textContent = "Incorrect";
+                        input_box.style.backgroundColor = "#ED7B8E";
+                    }
+                    document.querySelector('.section2 h3').appendChild(message);
+
+                    setTimeout(() => {
+                            input_box.style.backgroundColor = "";
+                            message.textContent = '';
+                        }, 800);
+                });
+            }
+
+
+            document.addEventListener('DOMContentLoaded', shortCheck);
+            document.addEventListener('DOMContentLoaded', mcqCheck);
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+        <div class="container">
+            <div class="section1">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>
+                    What is CS50 about?
+                </h3>
+                <button id = "option1">
+                    Computer Sciences
+                </button>
+                <button id = "option2">
+                    Business Intelligence
+                </button>
+                <button id = "option3">
+                    Humanitary Sciences
+                </button>
+                <button id = "option4">
+                    Psychological Sciences
+                </button>
+            </div>
+
+
+
+
+
+
+
+
+
+
+            <div class="section2">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                 <h3>
+                    Why did you chose CS50?
+                 </h3>
+                    <input type = "text" autocomplete="off" placeholder = "Your Answer" >
+                    <button>
+                        Check Answer
+                    </button>
+            </div>
+        </div>
+    </body>
+</html>

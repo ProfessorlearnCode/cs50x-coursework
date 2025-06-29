@@ -1,0 +1,87 @@
+sort1 uses:Bubble Sort
+
+How do you know?:
+Bubble sort is fast but not as fast as compared to the merge sort. We can prove so by simply
+checking the time taken by each algorithm to sort the random order (rand5000, rand10000, rand50000),
+reverse order (rev5000, rev10000, rev50000) and sorted order (sor5000, sor10000, sor50000). As bubble
+sort does its comparison in a paired format the best case analysis informs us that it will take Omega(n)
+as it will transverse the array once to check if its sorted or not. The lacking factor that could hinder
+Bubble sort is the number of passes it does than selection sort, the number of passes done by bubble sort
+are greater than selection which could effect the final time. If the array is sorted, that could be
+the defining factor to tell apart from the selection sort.
+
+sort2 uses: Merge Sort
+
+How do you know?:
+Merge sort is the highest performing and yet the fastest sorting algorithm
+out of the given three, selection, bubble and merger as it is applies divide and conquer principle
+(nlog). We can quickly deduce this by checking the time taken by each algorithm to sort the
+random order (rand5000, rand10000, rand50000),reverse order (rev5000, rev10000, rev50000)
+and sorted order (sor5000, sor10000, sor50000). Hence, we can deduce that the sort which is the
+fastest will be most definitely merge sort.
+
+sort3 uses: Selection Sort
+
+How do you know?: Selection sort uses selection and iterates through the entire array with modified
+comparisons with the key value, Selection sort may not be faster than merge but it can overpower Bubble
+sort due to the number of pass/comparisons made. We can quickly deduce this by checking the time taken
+by each algorithm to sort the random order (rand5000, rand10000, rand50000),
+reverse order (rev5000, rev10000, rev50000) and sorted order (sor5000, sor10000, sor50000). Hence, we
+can say that the selection sort due to its Omega(n^2) is defining factor its deduction
+
+
+
+
+
+
+
+
+
+
+*Preliminary investigation*
+
+sort            rand5000    |   rand10000   |   rand50000
+sort1 time:     0.95        |   0.201       |   6.317       // Deduction: None
+sort2 time:     0.29        |   0.110       |   1.495       // Deduction: Merge Sort: Due to highest Performance O(nlogn)
+sort3 time:     0.51        |   0.155       |   4.222       // Deduction: None
+
+
+
+sort            rev5000     |   rev10000    |   rev50000
+sort1 time:     0.099       |   0.237       |   7.480       // Deduction: None
+sort2 time:     0.026       |   0.065       |   2.466       // Deduction: Merge Sort: Due to highest Performance O(nlogn)
+sort3 time:     0.049       |   0.156       |   4.466       // Deduction: None
+
+
+
+sort            sorted5000  |   sorted10000 |   sorted50000
+sort1 time:     0.035       |   0.066       |   3.128       // Deduction: None
+sort2 time:     0.040       |   0.077       |   5.417       // Deduction: Merge Sort: Due to highest Performance O(nlogn)
+sort3 time:     0.050       |   0.163       |   3.676       // Deduction: None
+
+
+
+
+*LowerBound investigation -> Best case analysis*
+
+sort            rand5000     |   rand10000   |   rand50000
+sort1 time:     0.058        |   0.194       |   6.772      // Deduction: Bubble Sort: 2nd highest Performance Omega(n)
+sort2 time:     0.030        |   0.054       |   1.137      // Deduction: Merge Sort: Due to highest Performance Omega(nlogn)
+sort3 time:     0.046        |   0.124       |   3.116      // Deduction: Selection Sort: Least Perfomance Omega(n^2)
+
+
+
+sort            rev5000     |   rev10000    |   rev50000
+sort1 time:     0.072       |   0.232       |   6.201       // Deduction: Bubble Sort: 2nd highest Performance Omega(n)
+sort2 time:     0.028       |   0.061       |   1.572       // Deduction: Merge Sort: Due to highest Performance Omega(nlogn)
+sort3 time:     0.049       |   0.131       |   3.572       // Deduction: Selection Sort: Least Perfomance Omega(n^2)
+
+
+
+sort            sorted5000  |   sorted10000 |   sorted50000
+sort1 time:     0.026       |   0.057       |   1.145       // Deduction: Bubble Sort: 2nd highest Performance Omega(n)
+sort2 time:     0.028       |   0.059       |   1.113       // Deduction: Merge Sort: Due to highest Performance Omega(nlogn)
+sort3 time:     0.046       |   0.133       |   3.032       // Deduction: Selection Sort: Least Perfomance Omega(n^2)
+
+
+
